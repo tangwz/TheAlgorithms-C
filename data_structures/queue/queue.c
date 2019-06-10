@@ -1,5 +1,4 @@
 #include "queue.h"
-#include "../linked_list/linked_list.h"
 
 Queue queue_create() {
     Queue queue = (Queue)malloc(sizeof(struct Node));
