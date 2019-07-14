@@ -16,7 +16,14 @@ int main(int argc, char* argv[]) {
         root = insert(root, a[i]);
     }
 
+    printf("\n");
+    preorder_traversal(root);
+    printf("\n");
     inorder_traversal(root);
+    printf("\n");
+    postorder_traversal(root);
+    printf("\n");
+    levelorder_traversal(root);
 
     return EXIT_SUCCESS;
 }

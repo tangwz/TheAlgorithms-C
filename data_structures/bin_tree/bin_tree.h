@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "../queue/queue.h"
+#include "queue.h"
+#include "queue.c"
 
 #ifndef PROJECT_C_BIN_TREE_H
 #define PROJECT_C_BIN_TREE_H
