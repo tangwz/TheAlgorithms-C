@@ -45,9 +45,9 @@ ElementType extract_max(MaxHeap heap) {
         exit(EXIT_FAILURE);
     }
 
-    /* heap[1] is the minimum element. So we remove heap[1]. Size of the heap is decreased.
+    /* heap[1] is the maximum element. So we remove heap[1]. Size of the heap is increased.
      * Now heap[1] has to be filled. We put the last element in its place and see if it fits.
-     * If it does not fit, take minimum element among both its children and replaces parent with it.
+     * If it does not fit, take maximum element among both its children and replaces parent with it.
      * Again see if the last element fits in that place. */
     max = heap->elements[1];
     tmp = heap->elements[heap->size--];
@@ -59,7 +59,7 @@ ElementType extract_max(MaxHeap heap) {
         if ((child != heap->size) && (heap->elements[child] < heap->elements[child+1]))
             child++;
         /* To check if the last element fits or not.
-         * It suffices to check if the tmp is less than the minimum element among both the children */
+         * It suffices to check if the tmp is bigger than the maximum element among both the children */
         if (tmp > heap->elements[child]) break;
         else
             heap->elements[parent] = heap->elements[child];
