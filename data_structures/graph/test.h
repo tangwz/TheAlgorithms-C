@@ -1,7 +1,7 @@
+#include <assert.h>
+
 #ifndef PROJECT_TEST_GRAPH_H
 #define PROJECT_TEST_GRAPH_H
-
-#include <assert.h>
 
 
 void run_all_tests();

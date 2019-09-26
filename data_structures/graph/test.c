@@ -15,7 +15,9 @@ void test_adjacency_matrix()
     add_edge(graph, 3, 4);
     add_edge(graph, 1, 4);
     add_edge(graph, 1, 5);
-    add_edge(graph, 1, 6);
-    // print_graph(graph);
-    print_dfs(graph);
+    add_edge(graph, 5, 6);
+    //print_graph(graph);
+    //print_dfs(graph);
+    //dfs(graph);
+    bfs(graph);
 }

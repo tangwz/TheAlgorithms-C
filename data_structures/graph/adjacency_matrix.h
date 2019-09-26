@@ -1,5 +1,5 @@
-#ifndef PROJECT_C_GRAPH_H
-#define PROJECT_C_GRAPH_H
+#ifndef PROJECT_C_ADJ_MATRIX_H
+#define PROJECT_C_ADJ_MATRIX_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,4 +28,4 @@ void dfs(Adjacency_Matrix *g);
 void bfs(Adjacency_Matrix *g);
 
 
-#endif //PROJECT_C_GRAPH_H
+#endif //PROJECT_C_ADJ_MATRIX_H

@@ -1,6 +1,9 @@
-#ifndef PROJECT_C_GRAPH_H
-#define PROJECT_C_GRAPH_H
+#ifndef PROJECT_C_GRAPH_STACK_H
+#define PROJECT_C_GRAPH_STACK_H
 
+#include <stdbool.h>
+
+typedef int ElementType;
 typedef struct LNode *Linked_List;
 struct LNode {
     ElementType data;
@@ -14,4 +17,4 @@ bool stack_push(Stack stack, ElementType x);
 ElementType stack_pop(Stack stack);
 ElementType stack_top(Stack stack);
 
-#endif //PROJECT_C_GRAPH_H
+#endif //PROJECT_C_GRAPH_STACK_H

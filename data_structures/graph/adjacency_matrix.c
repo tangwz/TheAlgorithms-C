@@ -99,14 +99,61 @@ void print_dfs(Adjacency_Matrix *g)
 
 void dfs_recursive(Adjacency_Matrix *g, int *visited, int i)
 {
-    printf("\n%d", i);
+    printf("%d\n", i);
     visited[i] = 1;
-    for (int j = 0; j < g->size; ++j) {
+
+    for (int j = 0; j < g->size; j++) {
         if (!visited[j] && exists_edge(g, i, j))
             dfs_recursive(g, visited, j);
     }
 }
 
 
+void dfs(Adjacency_Matrix *g)
+{
+    int start = 1;
+    Stack stack = stack_create();
+    stack_push(stack, start);
+    int* visited = (int *)malloc(g->size * sizeof(int));
+    for (int i = 0; i < g->size; ++i)
+        visited[i] = 0;
 
+    while (!stack_is_empty(stack)) {
+        int i = stack_pop(stack);
 
+        if (!visited[i]) {
+            printf("%d\n", i);
+            visited[i] = 1;
+        }
+
+        for (int j = 0; j < g->size; j++) {
+            if (!visited[j] && exists_edge(g, i, j))
+                stack_push(stack, j);
+        }
+    }
+}
+
+void bfs(Adjacency_Matrix *g)
+{
+    Queue q = queue_create();
+    int* visited = (int *)malloc(g->size * sizeof(int));
+    for (int i = 0; i < g->size; ++i)
+        visited[i] = 0;
+
+    int start = 1;
+    enqueue(q, start);
+    while (!is_empty(q)) {
+        int v = dequeue(q);
+
+        if (!visited[v]) {
+            printf("%d\n", v);
+            visited[v] = 1;
+        }
+
+        for (int i = 0; i < g->size; ++i) {
+            if (!visited[i] && exists_edge(g, v, i)) {
+                enqueue(q, i);
+            }
+        }
+    }
+}
